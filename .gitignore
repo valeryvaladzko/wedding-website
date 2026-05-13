@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 nul
-credentials.json
+backend/credentials.json
 .env
 
 # Editor directories and files
