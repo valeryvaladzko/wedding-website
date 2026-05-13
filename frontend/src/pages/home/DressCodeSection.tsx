@@ -28,11 +28,11 @@ export function DressCodeSection() {
       <p className="mt-3 text-[var(--color-ink-soft)] leading-relaxed max-w-prose mx-auto">
         {t("home.dressCodeBody2")}
       </p>
-      <div className="mt-6 flex justify-center gap-3">
+      <div className="mt-6 flex flex-wrap justify-center gap-3">
         {swatches.map((bg, i) => (
           <span
             key={i}
-            className={`h-10 w-10 rounded-full border border-[var(--color-line)] ${bg}`}
+            className={`h-12 w-12 rounded-full border border-[var(--color-line)] ${bg}`}
           />
         ))}
       </div>

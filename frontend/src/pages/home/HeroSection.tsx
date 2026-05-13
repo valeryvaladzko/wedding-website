@@ -4,6 +4,7 @@ import { wedding, images } from "../../config";
 import { StatusBadge, attendanceToStatus } from "../../components/StatusBadge";
 import type { Attendance } from "../../types/guest";
 import { Button } from "../../components/Button.tsx";
+import { useNavigate } from "react-router-dom";
 
 function dateLabel(date: Date, lang: string): string {
   return new Intl.DateTimeFormat(lang, {
@@ -15,6 +16,7 @@ function dateLabel(date: Date, lang: string): string {
 }
 
 export function HeroSection() {
+  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const { guest } = useGuest();
   const status = attendanceToStatus(
@@ -59,7 +61,9 @@ export function HeroSection() {
           </div>
           {status === "pending" && (
             <div>
-              <Button>{t("home.rsvpButton")}</Button>
+              <Button onClick={() => navigate("rsvp")}>
+                {t("home.rsvpButton")}
+              </Button>
             </div>
           )}
           <p className="text-sm text-[var(--color-muted)]">

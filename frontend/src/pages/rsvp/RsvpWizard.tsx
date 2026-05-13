@@ -23,10 +23,7 @@ export function RsvpWizard({
   onCancel,
 }: RsvpWizardProps) {
   const { t } = useTranslation();
-  const steps = useMemo(
-    () => applicableSteps(rsvp.form),
-    [rsvp.form],
-  );
+  const steps = useMemo(() => applicableSteps(rsvp.form), [rsvp.form]);
   const [index, setIndex] = useState(startStep);
 
   useEffect(() => {
@@ -68,8 +65,8 @@ export function RsvpWizard({
         >
           {current?.render({ form: rsvp.form, setField: rsvp.setField })}
         </motion.div>
-
-        <div className="flex flex-col sm:flex-row gap-3 mt-8">
+        <div className="border-t border-gray-300 mt-8" />
+        <div className="flex flex-col-reverse sm:flex-row gap-3 mt-8">
           {safeIndex > 0 ? (
             <Button variant="secondary" onClick={back}>
               {t("common.back")}
