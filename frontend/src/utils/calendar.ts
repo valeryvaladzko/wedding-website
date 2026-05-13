@@ -24,17 +24,10 @@ export function downloadIcs(): void {
     "END:VCALENDAR",
   ].join("\r\n");
 
-  const blob = new Blob([event], { type: "text/calendar;charset=utf-8" });
+  const blob = new Blob([event], { type: "text/calendar" });
   const url = URL.createObjectURL(blob);
-
   const a = document.createElement("a");
   a.href = url;
-
-  a.target = "_blank";
-
-  document.body.appendChild(a);
   a.click();
-  document.body.removeChild(a);
-
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  URL.revokeObjectURL(url);
 }
