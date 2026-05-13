@@ -38,6 +38,12 @@ export function HeroSection() {
       <div className="mt-6 text-sm sm:text-base tracking-[0.2em] uppercase text-[var(--color-ink-soft)]">
         {dateLabel(wedding.date, i18n.resolvedLanguage ?? "ru")}
       </div>
+      <div className="text-sm sm:text-base tracking-[0.2em] uppercase text-[var(--color-ink-soft)]">
+        -
+      </div>
+      <div className="text-sm sm:text-base tracking-[0.2em] uppercase text-[var(--color-ink-soft)]">
+        {dateLabel(wedding.endDate, i18n.resolvedLanguage ?? "ru")}
+      </div>
       <div className="mt-1 text-sm text-[var(--color-muted)]">
         {wedding.venueName}
       </div>
