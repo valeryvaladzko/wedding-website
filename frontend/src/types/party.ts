@@ -6,4 +6,5 @@ export interface PartyMember {
   description: string;
   imageName?: string;
   status: PartyStatus;
+  isWeddingPlanner: boolean;
 }

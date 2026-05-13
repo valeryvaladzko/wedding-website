@@ -17,6 +17,7 @@ export interface GuestRecord {
   image_name?: string;
   party_order?: string;
   last_updated?: string;
+  is_wedding_planner?: string;
   [key: string]: string | undefined;
 }
 
@@ -30,6 +31,7 @@ export interface PartyMember {
   description: string;
   imageName?: string;
   status: "pending" | "accepted" | "declined";
+  isWeddingPlanner: boolean;
 }
 
 export interface DrivePhoto {

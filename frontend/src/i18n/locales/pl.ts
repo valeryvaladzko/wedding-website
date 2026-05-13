@@ -148,7 +148,7 @@ export const pl: Translations = {
   photos: {
     title: "Zdjęcia",
     subtitle: "Wspólny album — dodawaj swoje zdjęcia i oglądaj nasze.",
-    openFolder: "Otwórz wspólny album",
+    openFolder: "Otwórz folder do przesyłania zdjęć",
     empty: "Jeszcze pusto — zajrzyj po ślubie!",
     error: "Nie udało się wczytać zdjęć. Spróbuj później.",
   },

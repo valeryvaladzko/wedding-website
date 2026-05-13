@@ -54,9 +54,21 @@ export function Party() {
       )}
       {status === "ready" && members.length > 0 && (
         <div className="grid sm:grid-cols-2 gap-4">
-          {members.map((m) => (
-            <PartyMemberCard key={m.name} member={m} />
-          ))}
+          {members
+            .filter(({ isWeddingPlanner }) => !isWeddingPlanner)
+            .map((m) => (
+              <PartyMemberCard key={m.name} member={m} />
+            ))}
+        </div>
+      )}
+      <div className="border-t border-gray-300 my-8" />
+      {status === "ready" && members.length > 0 && (
+        <div className="grid sm:grid-cols-2 gap-4">
+          {members
+            .filter(({ isWeddingPlanner }) => isWeddingPlanner)
+            .map((m) => (
+              <PartyMemberCard key={m.name} member={m} />
+            ))}
         </div>
       )}
     </div>

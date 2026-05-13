@@ -94,6 +94,7 @@ export async function getPartyMembers(): Promise<PartyMember[]> {
       name: g.name,
       description: g.guest_description ?? "",
       status: attendanceToStatus(g.attendance),
+      isWeddingPlanner: isTruthy(g.is_wedding_planner),
     };
     if (g.image_name) member.imageName = g.image_name;
     return member;
