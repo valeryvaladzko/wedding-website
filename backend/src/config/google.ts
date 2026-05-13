@@ -2,7 +2,7 @@ import { google } from "googleapis";
 import { env } from "./env";
 
 const auth = new google.auth.GoogleAuth({
-  keyFile: env.credentialsPath,
+  credentials: env.googleCredentials,
   scopes: [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive",

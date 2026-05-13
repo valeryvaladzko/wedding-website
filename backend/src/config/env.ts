@@ -20,9 +20,18 @@ export const env = {
   nodeEnv: optional("NODE_ENV", "development"),
   spreadsheetId: required("SPREADSHEET_ID"),
   sheetName: optional("SHEET_NAME", "Sheet1"),
-  credentialsPath: path.resolve(
-    process.cwd(),
-    optional("GOOGLE_CREDENTIALS_PATH", "credentials.json"),
-  ),
+  googleCredentials: {
+    type: required("GOOGLE_CREDENTIALS_TYPE"),
+    project_id: required("GOOGLE_CREDENTIALS_PROJECT_ID"),
+    private_key_id: required("GOOGLE_CREDENTIALS_PRIVATE_KEY_ID"),
+    private_key: required("GOOGLE_CREDENTIALS_PRIVATE_KEY"),
+    client_email: required("GOOGLE_CREDENTIALS_CLIENT_EMAIL"),
+    client_id: required("GOOGLE_CREDENTIALS_CLIENT_ID"),
+    auth_uri: required("GOOGLE_CREDENTIALS_AUTH_URL"),
+    token_uri: required("GOOGLE_CREDENTIALS_TOKEN_URL"),
+    auth_provider_x509_cert_url: required("GOOGLE_CREDENTIALS_AUTH_PROVIDER"),
+    client_x509_cert_url: required("GOOGLE_CREDENTIALS_CLIENT_CERT_URL"),
+    universe_domain: required("GOOGLE_CREDENTIALS_UNIVERSE_DOMAIN"),
+  },
   corsOrigin: optional("CORS_ORIGIN", "*"),
 };
