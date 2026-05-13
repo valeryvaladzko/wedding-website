@@ -16,7 +16,7 @@ function optional(name: string, fallback: string): string {
 }
 
 export const env = {
-  port: Number(optional("PORT", "3000")),
+  port: Number(optional("PORT", "8000")),
   nodeEnv: optional("NODE_ENV", "development"),
   spreadsheetId: required("SPREADSHEET_ID"),
   sheetName: optional("SHEET_NAME", "Sheet1"),
